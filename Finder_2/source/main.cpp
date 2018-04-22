@@ -30,22 +30,22 @@ void match(const cv::Mat &dsc1, const cv::Mat &dsc2, std::vector<cv::DMatch> &ma
 
 int main()
 {
-	cv::VideoCapture cam(0);
-	if (!cam.isOpened())
-	{
-		std::cout << "NE RABOTAET KAMERA!\n";
-	}
+	//cv::VideoCapture cam(0);
+	//if (!cam.isOpened())
+	//{
+	//	std::cout << "NE RABOTAET KAMERA!\n";
+	//}
 	cv::namedWindow("window", cv::WINDOW_AUTOSIZE);
 
-	cv::Mat img_obj = cv::imread("../../Finder_2/resources/obj.jpg", CV_LOAD_IMAGE_GRAYSCALE);
-	cv::Mat img_scene;
+	cv::Mat img_obj = cv::imread("../../Finder_2/resources/template.jpg", CV_LOAD_IMAGE_GRAYSCALE);
+	cv::Mat img_scene = cv::imread("../../Finder_2/resources/dogs.jpg", CV_LOAD_IMAGE_GRAYSCALE);
 
 		
 	while (true)
 	{
-		cam >> img_scene;
-		cv::resize(img_scene, img_scene, cv::Size(620, 480));
-		cv::flip(img_scene, img_scene, 1);
+		//cam >> img_scene;
+		//cv::resize(img_scene, img_scene, cv::Size(620, 480));
+		//cv::flip(img_scene, img_scene, 1);
 
 		std::vector<cv::KeyPoint>  kp_obj, kp_scene;
 		detect(img_obj, kp_obj, img_scene, kp_scene);
